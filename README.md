@@ -1,49 +1,58 @@
-# Unified Platform
+# Unified Rod Platform — Software Architecture Book
 
-Unified Platform is a modular monolith blueprint for Rod System, Tree, Tarot, Numerology, Practices, AI, and Telegram capabilities.
+This repository is the architecture repository for the future Unified Rod Platform product. It is intentionally documentation-first: every strategic, domain, technical, security, migration, and delivery decision is described before implementation starts.
 
-## Architecture
+## Purpose
 
-The repository is organized around a backend modular monolith, frontend app, admin app, documentation, and deployment assets.
+The goal is to create a complete Architecture Book for a unified modular platform that combines Rod System, Tree, Tarot, Numerology, Practices, AI, Telegram, media, search, billing, analytics, and administration.
+
+The book is written sequentially, chapter by chapter, without compressing the engineering rationale. Each chapter is designed to become directly usable by product owners, architects, backend engineers, frontend engineers, DevOps engineers, security reviewers, and future implementation teams.
+
+## Repository structure
 
 ```text
-platform/
-  backend/
-    app/
-    shared/
-    modules/
-    infrastructure/
-  frontend/
-  admin/
-  docs/
-  docker/
+unified-platform-architecture/
+├── docs/                 # Architecture Book chapters grouped by volume
+├── diagrams/             # Mermaid, C4, UML, ERD, and sequence diagrams
+├── adr/                  # Architecture Decision Records
+├── templates/            # Chapter, ADR, API, and diagram templates
+├── api/                  # API specifications and examples
+├── database/             # Database model and migration design
+├── roadmap/              # Delivery roadmap and sprint planning
+└── README.md
 ```
 
-## Development order
+## Volumes
 
-1. Foundation
-2. Shared
-3. Auth
-4. Users
-5. AI Core
-6. Telegram Core
-7. Domain Engines
-8. Frontend
-9. Admin
-10. Production
+1. Volume I — Vision
+2. Volume II — Domain
+3. Volume III — Architecture
+4. Volume IV — Backend
+5. Volume V — AI Platform
+6. Volume VI — Database
+7. Volume VII — API
+8. Volume VIII — Frontend
+9. Volume IX — Infrastructure
+10. Volume X — DevOps
+11. Volume XI — Security
+12. Volume XII — Migration
+13. Volume XIII — Roadmap
 
-## Quick start
+## Chapter format
 
-```bash
-cd platform/backend
-python -m venv .venv
-source .venv/bin/activate
-pip install -e '.[dev]'
-uvicorn app.main:app --reload
-```
+Every full chapter should include:
 
-## Docker
+- detailed description;
+- architectural decisions;
+- Mermaid diagrams;
+- C4, UML, ERD, or sequence diagrams where relevant;
+- API examples where relevant;
+- development rules;
+- implementation recommendations;
+- risks and trade-offs;
+- acceptance criteria.
 
-```bash
-docker compose -f platform/docker/docker-compose.yml up --build
-```
+## Current writing status
+
+- Chapter 01 — Vision and Product Strategy: drafted.
+- Remaining chapters: planned in the master table of contents.
